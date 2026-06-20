@@ -1,0 +1,144 @@
+// JavaScript interactivity for OM Group of Companies website
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. Navigation Scroll Effect
+  const header = document.getElementById('header');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section');
+  
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Highlight Active Link
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= (sectionTop - 150)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check
+
+  // 2. Mobile Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinksMenu = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinksMenu.classList.toggle('mobile-active');
+    const icon = menuToggle.querySelector('i');
+    if (navLinksMenu.classList.contains('mobile-active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
+  });
+
+  // Close mobile menu on click of nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinksMenu.classList.remove('mobile-active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    });
+  });
+
+  // 3. Business Verticals Tabs switching
+  const tabsContainer = document.getElementById('vertical-tabs');
+  const tabButtons = document.querySelectorAll('.vertical-tab-btn');
+  const tabContents = document.querySelectorAll('.vertical-content');
+
+  tabsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.vertical-tab-btn');
+    if (!btn) return;
+    
+    const targetId = btn.dataset.target;
+    
+    // Deactivate previous
+    tabButtons.forEach(button => button.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Activate target
+    btn.classList.add('active');
+    const targetContent = document.getElementById(targetId);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+  });
+
+  // 4. Scroll Reveal Intersection Observer
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Trigger only once
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+
+  // 5. Contact Form Handler (Mock Submission)
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Simple validation feedback
+    if (!name || !email || !subject || !message) {
+      formStatus.textContent = 'Please fill out all fields.';
+      formStatus.className = 'form-message error';
+      return;
+    }
+    
+    // Mock network request delay
+    formStatus.textContent = 'Sending message...';
+    formStatus.className = 'form-message';
+    formStatus.style.display = 'block';
+    
+    setTimeout(() => {
+      // Clear inputs
+      contactForm.reset();
+      
+      // Show Success Message
+      formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent successfully. An expert will reach out to you shortly.';
+      formStatus.className = 'form-message success';
+      
+      // Clear status after 8 seconds
+      setTimeout(() => {
+        formStatus.style.display = 'none';
+      }, 8000);
+    }, 1500);
+  });
+});
