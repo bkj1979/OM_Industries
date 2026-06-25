@@ -9,7 +9,7 @@
     content="OM Smart Solutions is a leading technology and infrastructure solutions provider specializing in Smart City projects, ITMS, Security, Data Centers, Solar Energy, and Façade Construction.">
 
   <!-- CSS Link -->
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css?v=5">
 
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -44,6 +44,13 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
+    <!-- Flickering city light beams overlay -->
+    <div class="hero-glow-beams">
+      <div class="beam beam-1"></div>
+      <div class="beam beam-2"></div>
+      <div class="beam beam-3"></div>
+      <div class="ambient-glow"></div>
+    </div>
     <div class="container">
       <div class="hero-content reveal active">
         <span class="accent-text">OM Group of Companies</span>
@@ -60,6 +67,43 @@
 
   <!-- Overview Section -->
   <section id="overview" class="section">
+    <!-- Optical Fiber Parallax Background -->
+    <div class="optical-fiber-bg">
+      <svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="fiber-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.05" />
+          </linearGradient>
+          <linearGradient id="fiber-grad-5" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#ec4899" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="glow-ov" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M-50,150 C400,50 600,650 900,450 C1200,250 1300,750 1500,550" fill="none" stroke="url(#fiber-grad-4)"
+          stroke-width="2" />
+        <path d="M-100,500 C300,700 500,100 950,400 C1250,600 1200,50 1550,250" fill="none" stroke="url(#fiber-grad-5)"
+          stroke-width="2" />
+
+        <path d="M-50,150 C400,50 600,650 900,450 C1200,250 1300,750 1500,550" fill="none" stroke="#00f0ff"
+          stroke-width="3" stroke-dasharray="15 250" class="pulse-line-1" filter="url(#glow-ov)" />
+        <path d="M-100,500 C300,700 500,100 950,400 C1250,600 1200,50 1550,250" fill="none" stroke="#ec4899"
+          stroke-width="3" stroke-dasharray="20 350" class="pulse-line-2" filter="url(#glow-ov)" />
+
+        <circle cx="900" cy="450" r="4" fill="#00f0ff" filter="url(#glow-ov)" />
+        <circle cx="950" cy="400" r="4.5" fill="#ec4899" filter="url(#glow-ov)" />
+      </svg>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="accent-text">Who We Are</span>
@@ -88,7 +132,8 @@
               <h4>India Excellence Awards & Summit (2023)</h4>
               <p>Recognized for outstanding contributions at Delhi in association with Electronic Media partners
                 <em>Bharat24</em>, <em>First India</em>, and <em>News10India</em>, alongside cricket legend Sunil
-                Gavaskar.</p>
+                Gavaskar.
+              </p>
             </div>
           </div>
         </div>
@@ -114,6 +159,72 @@
 
   <!-- Business Verticals Section -->
   <section id="verticals" class="section">
+    <!-- Optical Fiber Parallax Background -->
+    <div class="optical-fiber-bg" id="optical-fiber-bg">
+      <svg width="100%" height="100%" viewBox="0 0 1440 1000" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="fiber-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.05" />
+          </linearGradient>
+          <linearGradient id="fiber-grad-2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#ec4899" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05" />
+          </linearGradient>
+          <linearGradient id="fiber-grad-3" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.05" />
+          </linearGradient>
+
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <filter id="glow-light" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Background curves representing optical fibers -->
+        <path d="M-80,250 C150,100 400,600 650,400 C900,200 1000,800 1400,700" fill="none" stroke="url(#fiber-grad-1)"
+          stroke-width="2" filter="url(#glow-light)" />
+        <path d="M-80,250 C150,100 400,600 650,400 C900,200 1000,800 1400,700" fill="none" stroke="#00f0ff"
+          stroke-width="0.5" opacity="0.8" />
+
+        <path d="M-120,650 C80,800 350,200 700,500 C1000,700 1000,100 1400,300" fill="none" stroke="url(#fiber-grad-2)"
+          stroke-width="2.5" filter="url(#glow-light)" />
+        <path d="M-120,650 C80,800 350,200 700,500 C1000,700 1000,100 1400,300" fill="none" stroke="#8b5cf6"
+          stroke-width="0.5" opacity="0.7" />
+
+        <path d="M-40,-100 C180,400 250,800 650,900 C900,950 1050,400 1400,1050" fill="none" stroke="url(#fiber-grad-3)"
+          stroke-width="1.5" filter="url(#glow-light)" opacity="0.6" />
+
+        <!-- Glowing nodes / data pulse lines -->
+        <path d="M-80,250 C150,100 400,600 650,400 C900,200 1000,800 1400,700" fill="none" stroke="#00f0ff"
+          stroke-width="3" stroke-dasharray="15 300" class="pulse-line-1" filter="url(#glow)" />
+        <path d="M-120,650 C80,800 350,200 700,500 C1000,700 1000,100 1400,300" fill="none" stroke="#ec4899"
+          stroke-width="3.5" stroke-dasharray="20 400" class="pulse-line-2" filter="url(#glow)" />
+        <path d="M-40,-100 C180,400 250,800 650,900 C900,950 1050,400 1400,1050" fill="none" stroke="#8b5cf6"
+          stroke-width="2" stroke-dasharray="10 250" class="pulse-line-3" filter="url(#glow)" />
+
+        <!-- Node intersections -->
+        <circle cx="650" cy="400" r="4" fill="#00f0ff" filter="url(#glow)" />
+        <circle cx="700" cy="500" r="5" fill="#ec4899" filter="url(#glow)" />
+        <circle cx="650" cy="900" r="3.5" fill="#8b5cf6" filter="url(#glow)" />
+      </svg>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="accent-text">What We Do</span>
@@ -502,78 +613,292 @@
 
   <!-- Key Clients & Associations Section -->
   <section id="clients" class="section">
+    <!-- Optical Fiber Parallax Background -->
+    <div class="optical-fiber-bg">
+      <svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="fiber-grad-6" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#ec4899" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05" />
+          </linearGradient>
+          <linearGradient id="fiber-grad-7" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="glow-cl" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M-50,400 C400,200 700,750 1000,300 C1200,100 1350,550 1500,200" fill="none" stroke="url(#fiber-grad-6)"
+          stroke-width="2" />
+        <path d="M100,850 C500,700 350,100 800,200 C1100,300 1250,700 1550,600" fill="none" stroke="url(#fiber-grad-7)"
+          stroke-width="2" />
+
+        <path d="M-50,400 C400,200 700,750 1000,300 C1200,100 1350,550 1500,200" fill="none" stroke="#ec4899"
+          stroke-width="3" stroke-dasharray="25 350" class="pulse-line-1" filter="url(#glow-cl)" />
+        <path d="M100,850 C500,700 350,100 800,200 C1100,300 1250,700 1550,600" fill="none" stroke="#00f0ff"
+          stroke-width="3" stroke-dasharray="15 300" class="pulse-line-2" filter="url(#glow-cl)" />
+
+        <circle cx="1000" cy="300" r="4.5" fill="#ec4899" filter="url(#glow-cl)" />
+        <circle cx="800" cy="200" r="4" fill="#00f0ff" filter="url(#glow-cl)" />
+      </svg>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="accent-text">Our Network</span>
         <h2 class="section-title gradient-text">Key Clients & Associations</h2>
+        <p class="section-subtitle">Trusted by India's leading government institutions and private enterprises</p>
       </div>
 
-      <div class="client-categories">
+      <!-- Government & Public Sector Carousel -->
+      <div class="carousel-block reveal">
+        <div class="carousel-label">
+          <i class="fa-solid fa-building-columns"></i>
+          <span>Government &amp; Public Sector</span>
+        </div>
+        <div class="logo-carousel-wrapper">
+          <div class="logo-carousel-track" id="gov-track">
 
-        <!-- Public Sector -->
-        <div class="client-category reveal">
-          <h3><i class="fa-solid fa-building-columns"></i> Government & Public Sector</h3>
-
-          <div class="client-logo-grid-container">
-            <div class="client-logo-card">
-              <img src="assets/extracted_img_p7_Im14.jpg" alt="Government Clients Grid 1">
-              <span>Primary Government Clients (TCIL, BEL, BECIL, BSNL)</span>
+            <!-- Slide set 1 -->
+            <div class="logo-slide">
+              <img src="assets/logo_tcil.png?v=3" alt="TCIL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">TCIL</div>
+              <span>TCIL</span>
             </div>
-            <div class="client-logo-card">
-              <img src="assets/extracted_img_p7_Im15.jpg" alt="Government Clients Grid 2">
-              <span>Public Sector & West Bengal Government Departments</span>
+            <div class="logo-slide">
+              <img src="assets/logo_bel.png?v=3" alt="BEL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BEL</div>
+              <span>BEL</span>
             </div>
-          </div>
+            <div class="logo-slide">
+              <img src="assets/logo_becil.png?v=3" alt="BECIL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BECIL</div>
+              <span>BECIL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_bsnl.png?v=3" alt="BSNL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BSNL</div>
+              <span>BSNL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_railtel.png?v=3" alt="RailTel"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">RailTel</div>
+              <span>RailTel</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_irctc.png?v=3" alt="IRCTC"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">IRCTC</div>
+              <span>IRCTC</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_india.png?v=3" alt="Govt of India"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Govt of India</div>
+              <span>Govt. of India</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_westbengal.png?v=3" alt="Govt of West Bengal"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Govt West Bengal</div>
+              <span>Govt. West Bengal</span>
+            </div>
 
-          <div class="client-grid" style="margin-top: 1.5rem;">
-            <div class="client-card">TCIL (Telecommunications Consultants India Ltd)</div>
-            <div class="client-card">BEL (Bharat Electronics Limited)</div>
-            <div class="client-card">BECIL (Broadcast Engineering Consultants India Ltd)</div>
-            <div class="client-card">BSNL (Bharat Sanchar Nigam Limited)</div>
-            <div class="client-card">RailTel Corporation of India Limited</div>
-            <div class="client-card">IRCTC</div>
-            <div class="client-card">Government of India</div>
-            <div class="client-card">Government of West Bengal</div>
-            <div class="client-card">Government Banks & Financial Institutions</div>
-            <div class="client-card">Various Urban Local Bodies & Municipal Corporations</div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="logo-slide">
+              <img src="assets/logo_tcil.png?v=3" alt="TCIL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">TCIL</div>
+              <span>TCIL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_bel.png?v=3" alt="BEL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BEL</div>
+              <span>BEL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_becil.png?v=3" alt="BECIL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BECIL</div>
+              <span>BECIL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_bsnl.png?v=3" alt="BSNL"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">BSNL</div>
+              <span>BSNL</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_railtel.png?v=3" alt="RailTel"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">RailTel</div>
+              <span>RailTel</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_irctc.png?v=3" alt="IRCTC"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">IRCTC</div>
+              <span>IRCTC</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_india.png?v=3" alt="Govt of India"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Govt of India</div>
+              <span>Govt. of India</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_westbengal.png?v=3" alt="Govt of West Bengal"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Govt West Bengal</div>
+              <span>Govt. West Bengal</span>
+            </div>
           </div>
         </div>
-
-        <!-- Private Sector -->
-        <div class="client-category reveal">
-          <h3><i class="fa-solid fa-handshake"></i> Private Sector & Ecosystems</h3>
-
-          <div class="client-logo-grid-container">
-            <div class="client-logo-card">
-              <img src="assets/extracted_img_p7_Im16.jpg" alt="Private Associations Grid 1">
-              <span>Real Estate & Tech Partnerships (Google, PS Group, Unitech)</span>
-            </div>
-            <div class="client-logo-card">
-              <img src="assets/extracted_img_p7_Im17.jpg" alt="Private Associations Grid 2">
-              <span>Corporate Groups & Conglomerates (Adani, Ambuja Cement)</span>
-            </div>
-            <div class="client-logo-card">
-              <img src="assets/extracted_img_p7_Im18.jpg" alt="Client Associations Grid 3">
-              <span>Urban Infrastructure & Building Partners</span>
-            </div>
-          </div>
-
-          <div class="client-grid" style="margin-top: 1.5rem;">
-            <div class="client-card">Google Technology Ecosystem</div>
-            <div class="client-card">Adani Group</div>
-            <div class="client-card">Ambuja Cement</div>
-            <div class="client-card">PS GROUP</div>
-            <div class="client-card">Shristi Infrastructure Development Ltd</div>
-            <div class="client-card">UNITECH</div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Private Sector Carousel (reverse direction) -->
+      <div class="carousel-block reveal" style="margin-top: 3rem;">
+        <div class="carousel-label">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Private Sector &amp; Corporate Ecosystems</span>
+        </div>
+        <div class="logo-carousel-wrapper">
+          <div class="logo-carousel-track reverse" id="priv-track">
+
+            <!-- Slide set 1 -->
+            <div class="logo-slide">
+              <img src="assets/logo_google.png?v=3" alt="Google"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Google</div>
+              <span>Google Technology</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_adani.png?v=3" alt="Adani Group"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Adani Group</div>
+              <span>Adani Group</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_ambuja.png?v=3" alt="Ambuja Cement"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Ambuja Cement</div>
+              <span>Ambuja Cement</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_psgroup.png?v=3" alt="PS Group"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">PS Group</div>
+              <span>PS Group</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_unitech.png?v=3" alt="Unitech"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Unitech</div>
+              <span>Unitech</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_shristi.png?v=3" alt="Shristi"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Shristi Infra</div>
+              <span>Shristi Infrastructure</span>
+            </div>
+
+            <!-- Duplicate set for seamless loop -->
+            <div class="logo-slide">
+              <img src="assets/logo_google.png?v=3" alt="Google"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Google</div>
+              <span>Google Technology</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_adani.png?v=3" alt="Adani Group"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Adani Group</div>
+              <span>Adani Group</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_ambuja.png?v=3" alt="Ambuja Cement"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Ambuja Cement</div>
+              <span>Ambuja Cement</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_psgroup.png?v=3" alt="PS Group"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">PS Group</div>
+              <span>PS Group</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_unitech.png?v=3" alt="Unitech"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Unitech</div>
+              <span>Unitech</span>
+            </div>
+            <div class="logo-slide">
+              <img src="assets/logo_shristi.png?v=3" alt="Shristi"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="logo-fallback" style="display:none">Shristi Infra</div>
+              <span>Shristi Infrastructure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section">
+    <!-- Optical Fiber Parallax Background -->
+    <div class="optical-fiber-bg">
+      <svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="fiber-grad-8" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.05" />
+          </linearGradient>
+          <linearGradient id="fiber-grad-9" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.05" />
+            <stop offset="50%" stop-color="#ec4899" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.05" />
+          </linearGradient>
+          <filter id="glow-co" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <path d="M-100,600 C300,500 500,100 850,350 C1150,550 1250,50 1550,200" fill="none" stroke="url(#fiber-grad-8)"
+          stroke-width="2" />
+        <path d="M-50,150 C400,350 600,750 1000,450 C1300,250 1350,650 1500,450" fill="none" stroke="url(#fiber-grad-9)"
+          stroke-width="2" />
+
+        <path d="M-100,600 C300,500 500,100 850,350 C1150,550 1250,50 1550,200" fill="none" stroke="#00f0ff"
+          stroke-width="3" stroke-dasharray="15 300" class="pulse-line-1" filter="url(#glow-co)" />
+        <path d="M-50,150 C400,350 600,750 1000,450 C1300,250 1350,650 1500,450" fill="none" stroke="#ec4899"
+          stroke-width="3" stroke-dasharray="25 400" class="pulse-line-2" filter="url(#glow-co)" />
+
+        <circle cx="850" cy="350" r="4" fill="#00f0ff" filter="url(#glow-co)" />
+        <circle cx="1000" cy="450" r="4.5" fill="#ec4899" filter="url(#glow-co)" />
+      </svg>
+    </div>
     <div class="container">
       <div class="section-header reveal">
         <span class="accent-text">Get In Touch</span>
@@ -703,7 +1028,8 @@
     </div>
 
     <div class="container footer-bottom">
-      <p>&copy; 2026 OM Group of Companies. All Rights Reserved. Designed for Smart Infrastructure & Future Growth.</p>
+      <p>&copy; 2026 OM Group of Companies. All Rights Reserved. Designed & Developed by <a
+          href="mailto:prasunjha080806@gmail.com" class="developer-link">Prasun and Brajesh Jha</a>.</p>
     </div>
   </footer>
 

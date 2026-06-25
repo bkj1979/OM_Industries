@@ -178,4 +178,40 @@ document.addEventListener('DOMContentLoaded', () => {
       formStatus.className = 'form-message error';
     });
   });
+
+  // 6. Interactive Scroll Parallax for Optical Fiber Backgrounds
+  const fiberBgs = document.querySelectorAll('.optical-fiber-bg');
+
+  if (fiberBgs.length > 0) {
+    let ticking = false;
+
+    const updateParallax = () => {
+      const viewportHeight = window.innerHeight;
+
+      fiberBgs.forEach(bg => {
+        const section = bg.parentElement;
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+
+        // Check if section is visible in viewport
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          // Compute parallax displacement based on parent section top
+          const offset = (viewportHeight - rect.top) * 0.12;
+          bg.style.transform = `translate3d(0, ${offset}px, 0)`;
+        }
+      });
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    });
+
+    // Run initial update
+    updateParallax();
+  }
 });
